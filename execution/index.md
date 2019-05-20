@@ -4,4 +4,3 @@
 * [Profile Editing](profiles.md)
 * [Reports](reports.md)
 * [Command Line Interface](cli.md)
-

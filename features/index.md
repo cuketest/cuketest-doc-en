@@ -7,4 +7,3 @@
 * [Step Editing](step_edit.md)
 * [Example Editing](examples.md)
 * [Tags & Filtering](tags.md)
-

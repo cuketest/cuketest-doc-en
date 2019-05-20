@@ -9,12 +9,11 @@ A typical sequence of creating Windows Automation Script are:
 3. Convert the test object in the model to code, drag and drop or copy them into the script
 4. Run/Debug Script
 
-[**Model Manager**](https://github.com/cuketest/bdd-test-automation-with-cuketest/tree/ebf5a57e99e0b73dfad103a93f3cfd53548a2f0e/model_mgr/index.md) is at core of creating Windows automation script. Besides, CukeTest provides a set of related Node.js APIs that provides flexible ways to automate Windows controls.
+**[Model Manager](/model_mgr/index.md)** is at core of creating Windows automation script. Besides, CukeTest provides a set of related Node.js APIs that provides flexible ways to automate Windows controls.
 
 Learn more about Windows Automation development methods by referring to the following:
 
-* [Model Manager](https://github.com/cuketest/bdd-test-automation-with-cuketest/tree/ebf5a57e99e0b73dfad103a93f3cfd53548a2f0e/model_mgr/model_index.md)
-* [Windows Automation APIs](https://github.com/cuketest/bdd-test-automation-with-cuketest/tree/ebf5a57e99e0b73dfad103a93f3cfd53548a2f0e/node_api/node_index.md)
-* [Walkthrough: Create Test Automation Script for Windows Apps](../walk/4_windows.md)
+* [Model Manager](/model_mgr/model_index.md)
+* [Windows Automation APIs](/node_api/node_index.md)
+* [Walkthrough: Create Test Automation Script for Windows Apps](/walk/4_windows.md)
 * [Windows Automation Blogs](http://www.leanpro.cn/blogs#windows)
-

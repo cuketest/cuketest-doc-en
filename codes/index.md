@@ -6,4 +6,3 @@
 * [Code Toolbox](code_box.md)
 * [IntelliSense and Autocomplete](intelli-sense.md)
 * [CukeTest APIs](api.md)
-

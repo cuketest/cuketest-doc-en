@@ -10,4 +10,3 @@ This chapter provides multiple walkthroughs, which shows how to create automatio
 * [Walkthrough: Create Test Automation Script for Windows Apps](4_windows.md)
 * [Walkthrough: Create Android Automation Test](5_android.md)
 * [Walkthrough: Image Comparison](6_image.md)
-
