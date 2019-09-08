@@ -1,57 +1,54 @@
 ## Walkthrough: Create Android Automation Test
 
-### 目标
+### Goal
 
-* 掌握如何定位手机应用控件
-* 掌握Android手机自动化测试流程
+* Understand how to locate mobile app controls
+* Master Android mobile phone automated testing process
 
-### 环境
-* 开发环境：Windows，Android 模拟器或手机，appium
-* 被测应用：Appium自带的应用API Demo
+### Prerequisites
+* Dependencies: 
+    * Android SDK
+    * Android phone or emulator
+    * Appium
+* Application Under Test (AUT): API Demo shipped with Appium
 
-### 前提条件
-* 配置Android SDK环境
-* 安装appium
-* 准备Android手机或者模拟器
+### Steps
 
-### 操作步骤
+#### New Project
 
-#### 新建项目
-
-打开CukeTest，【文件】--【新建项目】
-项目模板选择【mobile】，分别输入【项目名】和【项目路径】，点击【创建】。
+Open CukeTest, "File"--"New Project"
+Choose "Mobile", input project name "APIDemoTest" and select project path, then click "Create"。
 
 ![](assets_android/newproject.png)
 
-CukeTest会自动创建一个基于手机端自动化测试脚本模板，在项目目录下执行 `npm install` 安装项目依赖。
+CukeTest will automatically create a automation script project based on mobile template. Please run the `npm install` command to install the project dependencies in the project directory.
 
-#### 准备被测应用
+#### Prepare AUT
 
-测试客户端:[https://github.com/appium/sample-code/tree/master/sample-code/apps/ApiDemos/bin](https://github.com/appium/sample-code/tree/master/sample-code/apps/ApiDemos/bin)
-下载并安装到自己的手机。
+The app to be tested can be downloaded from: [https://github.com/appium/sample-code/tree/master/sample-code/apps/ApiDemos/bin](https://github.com/appium/sample-code/tree/master/sample-code/apps/ApiDemos/bin), try to download it and install on your own mobile device.
 
 
-#### 编辑用例
+#### Create Test Scenarios
 
-打开文件，在【可视】界面中输入如下内容</span></span>
+Open the file and enter the following in the "Visual" interface:
 
 ![](assets_android/feature.png)
 
-对应的【文本】视图内容为：
+The corresponding "text" view content is: 
 
-```javascript
-# language:  zh-CN
-功能: appim demo
-使用CukeTest以BDD的方式来做手机端的自动化测试样例。
- 
-  场景: API Demo 页面跳转
-    假如点击App跳转到App页面
-    当在App页面中点击Action Bar
-    那么页面应该跳转到Action Bar页面,页面中应该包含"Action Bar Mechanics"
+```gherkin
+Feature: appim demo
+Sample for using CukeTest to do BDD's automated test on the mobile phone.
+
+  Scenario: API Demo Page Transition
+    Given If you click on the app to jump to the App page
+    When clicking Action Bar on the App page
+    Then the page should jump to the Action Bar page, which should contain "Action Bar Mechanics"
 ```
 
-#### 完善自动化测试代码
-1. 获取设备串号
+#### Implement Test Automation Code
+
+1. Get device serial number:
 
   ```powershell
   adb devices
@@ -60,32 +57,35 @@ CukeTest会自动创建一个基于手机端自动化测试脚本模板，在项
   Y15QKCPH278J4   device
   ```
   
-2. 获取应用pacakage和启动的activity
-  命令行输入 `adb logcat | findstr START `  手动打开 __Demo API__ 应用，从日志中获取。
+2. Get the app package and start the activity
+  Run command `adb logcat | findstr START `, open __Demo API__ app manually, read the info similiar to the following from the log:
+
   ```basic
-  .....
+
+  ...
   [android.intent.category.LAUNCHER] flg=0x10200000 cmp=io.appium.android.apis/.ApiDemos bnds=[16,640][188,832] (has extras)} from uid
 10013 from pid 1943 on display 0 from pid 1943
-  .....
+  ...
+
   ```
 
-  取到app的package 和 activity 为 io.appium.android.apis/.ApiDemos
+  get the package/activity info, which is io.appium.android.apis/.ApiDemos
 
-3. 修改driver定义代码
+3. Modify driver definition code
 
-  打开 `support\get_driver.js` ,分别修改 `devicesName`,appPackage, appActivity的内容。修改完成后为:
+  Open file `support\get_driver.js`, modify the content of `devicesName`, appPackage, appActivity. the content of it is:
   
   ```javascript
   const webdriverio = require('webdriverio');
 
-  //设置被测应用参数
+  //Set the parameters for testing the application
   let options = {
     desiredCapabilities: {
         platformName: "Android",
-        deviceName: "Y15QKCPH278J4", //设备序列串号 
-        platformVersion: "5.1", //系统平台版本
-        appPackage: "io.appium.android.apis", //package 名字
-        appActivity: ".ApiDemos", //启动activity 名字
+        deviceName: "Y15QKCPH278J4", //Serial#
+        platformVersion: "5.1", //Android version
+        appPackage: "io.appium.android.apis", //package name
+        appActivity: ".ApiDemos", //activity name
         resetKeyboard: true,  
         noReset: true,
         unicodeKeyboard: true
@@ -94,7 +94,7 @@ CukeTest会自动创建一个基于手机端自动化测试脚本模板，在项
     port: 4723
   }
 
-  //根据参数配置创建WebDriverIO实例;
+  //Create a WebDriverIO instance based on the parameter configuration;
   function createDriver() {
     const client = webdriverio.remote(options);
     return client;
@@ -103,17 +103,16 @@ CukeTest会自动创建一个基于手机端自动化测试脚本模板，在项
   exports.driver = createDriver();
   ```
 
-4. 自动化测试代码
-  打开`step_definations\definitions1.js `文件，点击 step 后面的灰色按钮，生成自动化脚本样例。
+4. Test automation code
+  Open `features/feature1.feature` file, click the gray button on each step to generate a sample automation script.
 
   ![](assets_android/script.png)
 
-  使用uiautomatorviewer 工具定位到客户端元素
+  Use the *uiautomatorviewer* tool to navigate to client elements
 
   ![](assets_android/uiautomatorviewer.png)
 
-
-  根据元素定位信息，完成对相关操作的代码实现"step\_definitons/definitoins.js":
+  Implemnt step defintion functions defined in "step\_definitons/definitoins.js":
 
   ```javascript
   const { Given, When, Then } = require('cucumber')
@@ -121,27 +120,27 @@ CukeTest会自动创建一个基于手机端自动化测试脚本模板，在项
   const { driver } = require('../support/get_driver');
   const { $ } = require('webdriverio')
 
-  //// 你的步骤定义 /////
+  //// Your step definition /////
 
-  Given("点击App跳转到App页面", async function () {
-      await driver.click('android=new UiSelector().text("App").index(2)')
+  Given("If you click on the app to jump to the App page", async function () {
+    await driver.click('android=new UiSelector().text("App").index(2)')
   });
 
-  When("在App页面中点击Action Bar", async function () {
-      await driver.click('android=new UiSelector().text("Action Bar").index(0)')
+  When("clicking Action Bar on the App page", async function () {
+      await driver.click('android=new UiSelector().text("Action Bar").index(0)');
   });
 
-  Then("页面应该跳转到Action Bar页面,页面中应该包含{string}", async function (arg1) {
-
-      let texts =  await driver.getText('android=new UiSelector().textStartsWith("Action")')
-      console.log(texts)
-      return assert.ok(texts.includes(text))
-});
+  Then("the page should jump to the Action Bar page, which should contain {string}", async function (arg1) {
+    let texts =  await driver.getText('android=new UiSelector().textStartsWith("Action")');
+    console.log(texts)
+    return assert.ok(texts.includes(text));
+  });
+  
   ```
 
-#### 运行
+#### Run the Project
 
-1. 启动appium
+1. Start Appium
 
   ```basic
   appium
@@ -150,8 +149,9 @@ CukeTest会自动创建一个基于手机端自动化测试脚本模板，在项
   [Appium] Appium REST http interface listener started on 0.0.0.0:4723
   ```
 
-2. 运行项目
-  点击运行项目按钮，可以看到手机自动化运行。
+2. Run the Project
+
+  Click the Run Project button to start the running, and then you should be able to get the following report
 
   ![](assets_android/report.png)
 
