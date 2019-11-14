@@ -35,6 +35,8 @@ If Report Format is "html", there is also another setting affects the report lay
 
 The `"simple"` format report will still be saved as a html file. The content of `"simple"` report have the same content and coloring as running Cucumber.js from command line with default parameters.
 
+>Note: You can choose to output reports in multiple formats such as html+json, or simple+json, but you can't choose html+simple, because “simple” is also in html format.
+
 ## "Fast-Fail"
 
 When this switch is turned on, it stops when the first exception occurs.
