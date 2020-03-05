@@ -40,9 +40,9 @@ Below are the quota of different CukeTest editions.
 Quota per project  | Lite | Pro | Enterprise
 ---|---|---|---
 Scenarios | 30 | Unlimited | Unlimited
-Windows API Calls  |  some | more | Unlimited
-OCR API Calls | some  | more | Unlimited
-Image API | some  | more | Unlimited
+Windows API Calls  |  100 | 300 | Unlimited
+OCR API Calls | 30 | 100 | Unlimited
+Image API | 30  | 100 | Unlimited
 Video Recording | 15 minutes | Unlimited | Unlimited
 License | Free | Seat License | Seat License, Concurrent License
 

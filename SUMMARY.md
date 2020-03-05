@@ -34,13 +34,21 @@
     * [Objects API](/node_api/node_operations.md)
     * [Containers API](/node_api/node_container.md)
     * [Basic Operations API](/node_api/node_basic.md)
+    * [Java Automation](/node_api/java/java_basic.md)
     * [Virtual Control API](/node_api/virtual_api.md)
     * [Descriptive Mode](/node_api/descriptive_mode.md)
     * [OCR (Optical Character Recognition)](/node_api/ocr.md)
     * [Image APIs](/node_api/image.md)
     * [Util](/node_api/util.md)
-    * [QT Automation FAQ](/shared/qt_faq.md)
-    * [Windows Automation FAQ](/shared/win_faq.md)
+    * [Orchestration APIs](/shared/orchestrate.md)
+        * [Database Access](/shared/database.md)
+        * [Excel File Operations](/shared/excel.md)
+    * [Tips & Tricks on Automation](/shared/auto_faq.md)
+        * [Windows Automation FAQ](/shared/win_faq.md)
+        * [Automate Input Boxes](/shared/howto_edit_set.md)
+        * [QT Automation FAQ](/shared/qt_faq.md)
+        * [QT Table Controll Automation](/shared/qt/qt_table.md)
+        * [QT Control Types Are Not Recognized](/shared/qt/qt_accessible.md)
 
 
 
