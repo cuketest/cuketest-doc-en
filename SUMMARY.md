@@ -23,6 +23,12 @@
     * [Run Reports](execution/reports.md)
     * [Command Line Interface](execution/cli.md)
     
+* [Qt Automation](/qt/index.md)
+    * [QT Automation FAQ](/qt/qt_faq.md)
+    * [HOWTO: Automate Qt Text Edit Controls](/qt/howto/qt_edit_set.md)
+    * [HOWTO: QT Table Control Automation](/qt/howto/qt_table.md)
+    * [HOWTO: Recognize QT Control Types](/qt/howto/qt_accessible.md)
+
 * [Model Manager](/model_mgr/index.md)
     * [Model Manager](/model_mgr/model_manager.md)
     * [Model Manager Configuration](/model_mgr/model_options.md)
@@ -45,10 +51,6 @@
         * [Excel File Operations](/shared/excel.md)
     * [Tips & Tricks on Automation](/shared/auto_faq.md)
         * [Windows Automation FAQ](/shared/win_faq.md)
-        * [Automate Input Boxes](/shared/howto_edit_set.md)
-        * [QT Automation FAQ](/shared/qt_faq.md)
-        * [QT Table Controll Automation](/shared/qt/qt_table.md)
-        * [QT Control Types Are Not Recognized](/shared/qt/qt_accessible.md)
 
 
 
@@ -77,7 +79,6 @@
 * [Cucumber](cucumber/index.md)
     * [Gherkin](cucumber/gherkin.md)
     * [Tag Expressions](cucumber/tag-expressions.md)
-    * [Cucumber-js](cucumber/cucumber-js.md)
     * [Cucumber Concepts](cucumber/concepts.md)
         * [Behavior Driven Development](cucumber/concepts.md#bdd)
         * [Cucumber](cucumber/concepts.md#cucumber)

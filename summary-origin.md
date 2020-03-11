@@ -23,6 +23,12 @@
     * [Run Reports](execution/reports.md)
     * [Command Line Interface](execution/cli.md)
     
+* [Qt Automation](/qt/index.md)
+    * [QT Automation FAQ](/qt/qt_faq.md)
+    * [HOWTO: Automate Qt Text Edit Controls](/qt/howto/qt_edit_set.md)
+    * [HOWTO: QT Table Control Automation](/qt/howto/qt_table.md)
+    * [HOWTO: Recognize QT Control Types](/qt/howto/qt_accessible.md)
+
 *model_manager_node_api*
 * [Others](misc/index.md)
     * [FAQs](misc/faqs.md)
@@ -48,7 +54,6 @@
 * [Cucumber](cucumber/index.md)
     * [Gherkin](cucumber/gherkin.md)
     * [Tag Expressions](cucumber/tag-expressions.md)
-    * [Cucumber-js](cucumber/cucumber-js.md)
     * [Cucumber Concepts](cucumber/concepts.md)
         * [Behavior Driven Development](cucumber/concepts.md#bdd)
         * [Cucumber](cucumber/concepts.md#cucumber)
