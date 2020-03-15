@@ -2,6 +2,7 @@
 
 * [CukeTest Overview](readme.md)
 * [CukeTest Demos](misc/demos.md)
+* [Install CukeTest on Linux](misc/install_linux.md)
 * [Feature Editing](features/index.md)
     * [Overview](features/overview.md)
     * [Visual Mode Editing](features/visual_mode.md)
